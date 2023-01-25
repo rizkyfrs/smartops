@@ -1,0 +1,158 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    id 'com.google.firebase.crashlytics'
+    id 'com.google.gms.google-services'
+}
+
+ext.networkSurveyMessagingVersion = '0.8.0'
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.smartfren.smartops"
+        minSdk 21
+        targetSdk 30
+        versionCode 8
+        versionName "23.03"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "MAPBOX_ACCESS_TOKEN", '"pk.eyJ1IjoicmlmZXJhIiwiYSI6ImNremg4c2ZxbjNhb2sycm45eTNvYWdqbGkifQ._v0NcZ1hsIKPZ5i9CpinWQ"')
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.0'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'pub.devrel:easypermissions:3.0.0'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.github.dhaval2404:imagepicker-support:1.7.1'
+    implementation 'com.getkeepsafe.taptargetview:taptargetview:1.11.0'
+    implementation 'com.github.faruktoptas:FancyShowCaseView:1.3.9'
+    implementation 'org.greenrobot:eventbus:3.3.1'
+
+    //Lifecycle Components(ViewModel, LiveData and ReactiveStreams)
+    def lifecycle_version = "2.3.0-beta01"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+//    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+    // Coroutines
+    def coroutines_version = "1.3.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+    // Coroutine Lifecycle Scopes
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
+
+    // Preferences DataStore
+    implementation "androidx.datastore:datastore-preferences:1.0.0-alpha04"
+
+    // LiveData Coroutines
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    //Moshi
+    def moshiVersion = "1.10.0"
+    implementation "com.squareup.moshi:moshi:$moshiVersion"
+//    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion"
+    implementation "com.squareup.retrofit2:converter-moshi:2.9.0"
+
+    // Room
+    def room_version = "2.4.1"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    // Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$room_version"
+
+    // Hilt
+    def hilt_version = "2.40.5"
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    def hilt_viewmodels = "1.0.0-alpha03"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_viewmodels"
+    kapt "androidx.hilt:hilt-compiler:$hilt_viewmodels"
+
+    // Activity KTX for viewModels()
+    implementation "androidx.activity:activity-ktx:1.1.0"
+    implementation 'androidx.fragment:fragment-ktx:1.2.5'
+
+    // Timber
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    //MAPBOX
+//    implementation "com.mapbox.navigation:android:2.1.1"
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:8.6.7'
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation:0.42.6'
+    implementation "com.mapbox.mapboxsdk:mapbox-android-telemetry:6.1.0"
+//    implementation "com.mapbox.navigation:android:2.2.2"
+    //for marshalling - googlemaps for get current location (error if not this)
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+    //Chart
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    // Dependency to include Maps SDK for Android
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
+    implementation 'com.google.maps.android:maps-utils-ktx:3.4.0'
+
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:30.3.0')
+
+    // Declare the dependencies for the Crashlytics and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.8'
+    implementation 'com.google.firebase:firebase-analytics-ktx:20.1.0'
+
+    // Firebase Cloud Messaging (Kotlin)
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+
+    implementation 'androidx.work:work-runtime:2.7.1'
+    
+    implementation "org.achartengine:achartengine:1.2.0"
+
+    implementation 'com.scottyab:rootbeer-lib:0.1.0'
+
+    implementation "com.craxiom:network-survey-messaging:${networkSurveyMessagingVersion}"
+    implementation "com.google.protobuf:protobuf-java-util:3.17.3"
+
+}

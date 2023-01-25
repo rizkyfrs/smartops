@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clAppBar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/color_pink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:rotation="180"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitleAppBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_task"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clAppBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clAdd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tvTitleAddActivityRegion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/activity_region"
+                    android:textColor="@color/color_grey"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@id/etAddActivityRegion"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etAddActivityRegion"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/border_grey"
+                    android:padding="10dp"
+                    android:textColor="@color/color_grey"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toTopOf="@id/tvTitleAddDomainLv1"
+                    app:layout_constraintEnd_toStartOf="@id/tvAddSiteID"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleAddActivityRegion" />
+
+                <TextView
+                    android:id="@+id/tvTitleAddSiteID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/site_id"
+                    android:textColor="@color/color_grey"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@id/etAddActivityRegion"
+                    app:layout_constraintStart_toStartOf="@id/tvAddSiteID"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvAddSiteID"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/border_grey"
+                    android:gravity="center_vertical"
+                    android:hint="ZJKT_XXXX"
+                    android:lines="1"
+                    android:padding="10dp"
+                    android:textColor="@color/color_grey"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/etAddActivityRegion"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleAddSiteID" />
+
+                <TextView
+                    android:id="@+id/tvTitleAddDomainLv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/activity_domain_lev_1"
+                    android:textColor="@color/color_grey"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@id/clDomainLv1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etAddActivityRegion" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clDomainLv1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_grey"
+                    app:layout_constraintBottom_toTopOf="@id/tvTitleAddDomainLv2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleAddDomainLv1">
+
+                    <Spinner
+                        android:id="@+id/spDomainLev1"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvTitleAddDomainLv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/activity_domain_lev_2"
+                    android:textColor="@color/color_grey"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@id/clDomainLv2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clDomainLv1" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clDomainLv2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleAddDomainLv2">
+
+                    <Spinner
+                        android:id="@+id/spDomainLev2"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvTitleAddNeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/ne_name"
+                    android:textColor="@color/color_grey"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@id/etAddNeName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clDomainLv2" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etAddNeName"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/border_grey"
+                    android:padding="10dp"
+                    android:textColor="@color/color_grey"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleAddNeName" />
+
+                <TextView
+                    android:id="@+id/tvTitleAddWOID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/wo_id"
+                    android:textColor="@color/color_grey"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@id/etAddWOID"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etAddNeName" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etAddWOID"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/border_grey"
+                    android:padding="10dp"
+                    android:textColor="@color/color_grey"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleAddWOID" />
+
+                <TextView
+                    android:id="@+id/tvTitleAddPriority"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/priority"
+                    android:textColor="@color/color_grey"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@id/clPriority"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etAddWOID" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clPriority"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/border_grey"
+                    app:layout_constraintEnd_toStartOf="@id/clDateExe"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleAddPriority">
+
+                    <Spinner
+                        android:id="@+id/spPriority"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvTitleAddDateExe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/date_executed"
+                    android:textColor="@color/color_grey"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@id/clDateExe"
+                    app:layout_constraintStart_toStartOf="@id/clDateExe"
+                    app:layout_constraintTop_toBottomOf="@id/etAddWOID" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clDateExe"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/border_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/clPriority"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleAddDateExe">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDateExec"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:textSize="14dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/btnDate"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/btnDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:src="@drawable/icon_calendar"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/color_grey" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvTitleAddActionNeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/action_needed"
+                    android:textColor="@color/color_grey"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@id/etAddActionNeeded"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clPriority" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etAddActionNeeded"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/border_grey"
+                    android:padding="10dp"
+                    android:textColor="@color/color_grey"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleAddActionNeed" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clAdd">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clAddPhoto"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvTitleAddPhotoBefore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/photo_before"
+                        android:textColor="@color/color_grey"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/clAddPhotoBefore"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clAddPhotoBefore"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/border_grey"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/clAddPhotoAfter"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitleAddPhotoBefore">
+
+                        <ImageView
+                            android:id="@+id/ivAddPhotoBefore"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_margin="5dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llPhotoBeforeDefault"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/image_default" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/add_photo_before"
+                                android:textColor="@color/color_stroke_grey"
+                                android:textSize="12dp" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tvTitleAddPhotoAfter"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/photo_after"
+                        android:textColor="@color/color_grey"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/clAddPhotoAfter"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/clAddPhotoAfter"
+                        app:layout_constraintTop_toTopOf="@id/tvTitleAddPhotoBefore" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clAddPhotoAfter"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/border_grey"
+                        app:layout_constraintBottom_toBottomOf="@id/clAddPhotoBefore"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/clAddPhotoBefore"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitleAddPhotoAfter">
+
+                        <ImageView
+                            android:id="@+id/ivAddPhotoAfter"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_margin="5dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llPhotoAfterDefault"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/image_default" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/add_photo_after"
+                                android:textColor="@color/color_stroke_grey"
+                                android:textSize="12dp" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvTitleAddRCALv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/rca_lev_1"
+                    android:textColor="@color/color_grey"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@id/clRCALv1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clAddPhoto" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clRCALv1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleAddRCALv1">
+
+                    <Spinner
+                        android:id="@+id/spRCALev1"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvTitleAddRCALv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/rca_lev_2"
+                    android:textColor="@color/color_grey"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@id/clRCALv2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clRCALv1" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clRCALv2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleAddRCALv2">
+
+                    <Spinner
+                        android:id="@+id/spRCALev2"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvTitleAddRCALv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/rca_lev_3"
+                    android:textColor="@color/color_grey"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@id/clRCALv3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clRCALv2" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clRCALv3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleAddRCALv3">
+
+                    <Spinner
+                        android:id="@+id/spRCALev3"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvTitleAddRCAAction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/rca_action"
+                    android:textColor="@color/color_grey"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@id/clRCAAction"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clRCALv3" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clRCAAction"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleAddRCAAction">
+
+                    <Spinner
+                        android:id="@+id/spRCAAction"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvTitleAddActionDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/action_detail"
+                    android:textColor="@color/color_grey"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@id/etAddActionDetail"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clRCAAction" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etAddActionDetail"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/border_grey"
+                    android:gravity="top"
+                    android:padding="10dp"
+                    android:textColor="@color/color_grey"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toTopOf="@id/tvAddNoteActDet"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleAddActionDetail" />
+
+                <TextView
+                    android:id="@+id/tvAddNoteActDet"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_detail_activity_task"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etAddActionDetail" />
+
+                <TextView
+                    android:id="@+id/tvTitleAddActionType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/action_type"
+                    android:textColor="@color/color_grey"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@id/clAddActionType"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvAddNoteActDet" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clAddActionType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleAddActionType">
+
+                    <Spinner
+                        android:id="@+id/spActionType"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvTitleAddActionStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/activity_status"
+                    android:textColor="@color/color_grey"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@id/clAddActionStatus"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clAddActionType" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clAddActionStatus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleAddActionStatus">
+
+                    <Spinner
+                        android:id="@+id/spActionStatus"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clPendingLv1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toTopOf="@id/clPendingLv2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clAddActionStatus">
+
+                    <TextView
+                        android:id="@+id/tvTPendingLv1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pending_remark_level_1"
+                        android:textColor="@color/color_grey"
+                        android:textSize="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvPendingLv1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:textColor="@color/color_grey"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTPendingLv1" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clSpPendingLv1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_grey"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvTPendingLv1">
+
+                        <Spinner
+                            android:id="@+id/spPendingLv1"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tvNotePendingLv1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/diisi_jika_status_pending"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textSize="12dp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/clSpPendingLv1" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clPendingLv2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clPendingLv1">
+
+                    <TextView
+                        android:id="@+id/tvTPendingLv2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pending_remark_level_2"
+                        android:textColor="@color/color_grey"
+                        android:textSize="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvPendingLv2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:textColor="@color/black"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTPendingLv2" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clSpPendinglv2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_grey"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvTPendingLv2">
+
+                        <Spinner
+                            android:id="@+id/spPendingLv2"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tvNotePendingLv2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/diisi_jika_status_pending"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textSize="12dp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/clSpPendinglv2" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSaveAddTask"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/button_pink"
+                    android:text="@string/save"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clPendingLv2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

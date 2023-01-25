@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="mdrViewModel"
+            type="com.smartfren.smartops.ui.materialdeliveryrequest.MDRViewModel" />
+
+
+        <variable
+            name="stolenViewModel"
+            type="com.smartfren.smartops.ui.stolen.StolenViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clAppBar"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:background="@color/color_pink"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:rotation="180"
+                android:src="@drawable/ic_arrow_right"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTitleAppBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_task"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btnBack"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clAppBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clAdd"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clMdrLineOne"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tvTitleAddMdrId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="MDR ID"
+                            android:textColor="@color/color_grey"
+                            android:textSize="12dp"
+                            app:layout_constraintBottom_toTopOf="@id/etAddMdrId"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etAddMdrId"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/border_grey"
+                            android:padding="10dp"
+                            android:textColor="@color/color_grey"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/etAddRegion"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTitleAddMdrId" />
+
+                        <TextView
+                            android:id="@+id/tvTitleAddRegion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/region"
+                            android:textColor="@color/color_grey"
+                            android:textSize="12dp"
+                            app:layout_constraintBottom_toTopOf="@id/etAddRegion"
+                            app:layout_constraintStart_toStartOf="@id/etAddRegion"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                            android:id="@+id/etAddRegion"
+                            android:layout_width="120dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="10dp"
+                            android:background="@drawable/border_grey"
+                            android:lines="1"
+                            android:padding="10dp"
+                            android:textColor="@color/color_grey"
+                            android:textSize="14dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/etAddMdrId"
+                            app:layout_constraintTop_toBottomOf="@id/tvTitleAddRegion" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tvTittleMdrStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Status"
+                        android:textColor="@color/color_grey"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@id/clMdrStatus"
+                        app:layout_constraintStart_toStartOf="@id/clMdrStatus"
+                        app:layout_constraintTop_toBottomOf="@id/clMdrLineOne" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clMdrStatus"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/border_grey"
+                        app:layout_constraintEnd_toStartOf="@id/clMdrVendor"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvTittleMdrStatus">
+
+                        <Spinner
+                            android:id="@+id/spMdrStatus"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:entries="@array/status_mdr"
+                            android:onItemSelected="@{(parent, view, selection, id)-> mdrViewModel.setStatusMDRSelected(selection)}"
+                            android:selectedItemPosition="@{mdrViewModel.statusMDRSelection}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tvTittleMdrVendor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Vendor"
+                        android:textColor="@color/color_grey"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@id/clMdrStatus"
+                        app:layout_constraintStart_toStartOf="@id/clMdrVendor"
+                        app:layout_constraintTop_toBottomOf="@id/clMdrLineOne" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clMdrVendor"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/border_grey"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/clMdrStatus"
+                        app:layout_constraintTop_toBottomOf="@id/tvTittleMdrStatus">
+
+                        <Spinner
+                            android:id="@+id/spMdrVendor"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clMdrLineTwo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/clMdrStatus">
+
+                        <TextView
+                            android:id="@+id/tvTitleAddMdrWoSiteId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="WO Site ID"
+                            android:textColor="@color/color_grey"
+                            android:textSize="12dp"
+                            app:layout_constraintBottom_toTopOf="@id/tvAddMdrWoSiteId"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvAddMdrWoSiteId"
+                            android:layout_width="130dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/border_grey"
+                            android:hint="ZJKT_XXXX"
+                            android:gravity="center_vertical"
+                            android:padding="10dp"
+                            android:textColor="@color/color_grey"
+                            android:textSize="14dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/etAddMdrWoId"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTitleAddMdrWoSiteId" />
+
+                        <TextView
+                            android:id="@+id/tvTitleAddMdrWoId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/wo_id"
+                            android:textColor="@color/color_grey"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toTopOf="@id/etAddMdrWoId"
+                            app:layout_constraintStart_toStartOf="@id/etAddMdrWoId"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                            android:id="@+id/etAddMdrWoId"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="10dp"
+                            android:background="@drawable/border_grey"
+                            android:lines="1"
+                            android:padding="10dp"
+                            android:textColor="@color/color_grey"
+                            android:textSize="14dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvAddMdrWoSiteId"
+                            app:layout_constraintTop_toBottomOf="@id/tvTitleAddMdrWoId" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tvTitleAddMdrWoDom"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="WO Domain"
+                        android:textColor="@color/color_grey"
+                        android:textSize="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/clMdrLineTwo" />
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/etAddMdrWoDom"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/border_grey"
+                        android:lines="1"
+                        android:padding="10dp"
+                        android:textColor="@color/color_grey"
+                        android:textSize="14dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitleAddMdrWoDom" />
+
+                    <TextView
+                        android:id="@+id/tvTittleMdrDOPRegion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="DOP Region"
+                        android:textColor="@color/color_grey"
+                        android:textSize="12dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/etAddMdrWoDom" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clMdrDOPRegion"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_grey"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvTittleMdrDOPRegion">
+
+                        <Spinner
+                            android:id="@+id/spMdrDOPRegion"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tvTittleMdrDOP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="DOP"
+                        android:textColor="@color/color_grey"
+                        android:textSize="12dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/clMdrDOPRegion" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clMdrDOP"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_grey"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvTittleMdrDOP">
+
+                        <Spinner
+                            android:id="@+id/spMdrDOP"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tvTitleAddMdrDateExe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/request_date"
+                        android:textColor="@color/color_grey"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@id/clMdrDateExe"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/clMdrDOP" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clMdrDateExe"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/border_grey"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitleAddMdrDateExe">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etAddMdrDateExec"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:padding="10dp"
+                            android:textSize="14dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/btnAddMdrDate"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/btnAddMdrDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:src="@drawable/icon_calendar"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/color_grey" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnAddItemMDR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_pink"
+                        android:drawableStart="@drawable/img_add"
+                        android:gravity="center"
+                        android:paddingHorizontal="10dp"
+                        android:text="Add Item"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="14dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/clMdrDateExe" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvForm"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btnAddItemMDR" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnSaveAddTask"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_pink"
+                        android:text="@string/save"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/rvForm" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

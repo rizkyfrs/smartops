@@ -1,0 +1,431 @@
+<resources>
+    <string name="app_name">Smartops</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoicmlmZXJhIiwiYSI6ImNreWd6cHZ6MzBuY3Uydm44YW9xbGxlc3oifQ.VtrUk4vOTsEOZR72EaaEfA</string>
+    <string name="change_password">Change Password</string>
+    <string name="old_password">Old Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="new_password">New Password</string>
+    <string name="schedule">Schedule</string>
+    <string name="no_schedule">No Schedule</string>
+    <string name="string_greeting">Halo, selamat pagi</string>
+    <string name="daily_activity">Daily Activity</string>
+    <string name="network_risk">Network Risk</string>
+    <string name="dummy">Dummy</string>
+    <string name="personal_data">Personal Data</string>
+    <string name="logout">Logout</string>
+    <string name="planned_date">Planned Date</string>
+    <string name="activity_domain_level_1">Activity Domain Level 1</string>
+    <string name="activity_domain_level_2">Activity Domain Level 2</string>
+    <string name="task">Task</string>
+    <string name="string_greeting_login">Halo, selamat pagi!</string>
+    <string name="string_tittle_oms_mobile">Smartops</string>
+    <string name="sign_in_to_start_your_session">Please Sign in to start your session</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="please_enter_validation_code">Please enter validation Code</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="string_footer"><![CDATA[©2022 Network Operation & Maintenance - Smartfren]]></string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="number">Number</string>
+    <string name="activity_number">Activity Number</string>
+    <string name="activity_region_name">Activity Region Name</string>
+    <string name="domain_level_1">Domain Level 1</string>
+    <string name="domain_level_2">Domain Level 2</string>
+    <string name="site_id">Site ID</string>
+    <string name="neid">NEID</string>
+    <string name="vendor">Vendor</string>
+    <string name="woid">WOID</string>
+    <string name="priority">Priority</string>
+    <string name="action_needed">Action Needed</string>
+    <string name="update_task">Update Task</string>
+    <string name="photo_before">Photo Before</string>
+    <string name="photo_after">Photo After</string>
+    <string name="rca_lev_1">RCA Lev.1</string>
+    <string name="rca_lev_2">RCA Lev.2</string>
+    <string name="rca_lev_3">RCA Lev.3</string>
+    <string name="rca_action">RCA Action</string>
+    <string name="action_detail">Action Detail</string>
+    <string name="string_detail_activity_task">Tuliskan detail activity yang Anda lakukan terkait dengan TASK ini jika ada.</string>
+    <string name="action_type">Action Type</string>
+    <string name="activity_status">Activity Status</string>
+    <string name="pending_remark_level_1">Pending Remark - Level 1</string>
+    <string name="diisi_jika_status_pending">diisi jika status PENDING</string>
+    <string name="pending_remark_level_2">Pending Remark - Level 2</string>
+    <string name="save">Save</string>
+    <string name="selamat_pagi">selamat pagi</string>
+    <string name="selamat_siang">selamat siang</string>
+    <string name="selamat_petang">selamat petang</string>
+    <string name="selamat_malam">selamat malam</string>
+    <string name="string_title_location_setting">Turn on location setting</string>
+    <string name="string_detail_location_setting">Location setting is needed to use the feature Smartops.</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="search">Search</string>
+    <string name="version">v22.05</string>
+    <string name="sorry_data_is_not_available">Sorry data is not available</string>
+    <string name="view_detail">View Detail</string>
+    <string name="next">Next</string>
+    <string name="period_month">Period Month</string>
+    <string name="period_year">Period Year</string>
+    <string name="period">Period</string>
+    <string name="activity_history">Activity History Log</string>
+    <string name="actual_date">Actual Date</string>
+    <string name="activity_region">Activity Region</string>
+    <string name="activity_domain_lev_1">Activity Domain Lev 1</string>
+    <string name="activity_domain_lev_2">Activity Domain Lev 2</string>
+    <string name="ne_name">NE Name</string>
+    <string name="wo_id">WO ID</string>
+    <string name="date_executed">Date Executed</string>
+    <string name="activity_group">Activity Group</string>
+    <string name="activity_type">Activity Type</string>
+    <string name="region">Region</string>
+    <string name="activity_date">Activity Date</string>
+    <string name="element_available">Element Available</string>
+    <string name="remark">Remark</string>
+    <string name="multiple_choice_options">Multiple Choice Options</string>
+    <string name="attachment">Attachment</string>
+    <string name="status">Status</string>
+    <string name="activity_report">Activity Report</string>
+    <string name="activity_schedule">Activity Schedule</string>
+    <string name="progress">Progress</string>
+    <string name="activity_name">Activity Name</string>
+    <string name="date">Date</string>
+    <string name="add_task">Add Task</string>
+    <string name="activity_notes">Activity Notes</string>
+    <string name="activity_checklist">Activity Checklist</string>
+    <string name="activity_report_add">Activity Report Add</string>
+    <string name="please_enter_username">Please enter your Username.</string>
+    <string name="please_enter_password">Please enter your Password</string>
+    <string name="validation_code">Validation code not same.</string>
+    <string name="option_mandatory">Option is Mandatory</string>
+    <string name="remark_mandatory">Remark is Mandatory</string>
+    <string name="attachment_mandatory">Attachment is Mandatory</string>
+    <string name="validate_task">Validate Task</string>
+    <string name="select_FLM_PIC">Select FLM PIC...</string>
+    <string name="select_date">Select date...</string>
+    <string name="ccf_activity_report">CCF Activity Report</string>
+    <string name="nfm_ticket_report">NFM Ticket Report</string>
+    <string name="nfm_ticket_detail">NFM Ticket Detail</string>
+    <string name="nfm_ticket_num">Ticket Num</string>
+    <string name="nfm_alarm_code">Alarm Code</string>
+    <string name="nfm_alarm_value">Alarm Value</string>
+    <string name="nfm_alarm_location">Alarm Location</string>
+    <string name="nfm_activity_location">Activity Location</string>
+    <string name="nfm_activity_pic">Activity PIC</string>
+    <string name="nfm_activity_report">NFM Activity Report</string>
+    <string name="nfm_ack_this_ticket">ACK This Ticket</string>
+    <string name="menu">Menu</string>
+    <string name="access_token">pk.eyJ1IjoicmlmZXJhIiwiYSI6ImNremg4c2ZxbjNhb2sycm45eTNvYWdqbGkifQ._v0NcZ1hsIKPZ5i9CpinWQ</string>
+    <string name="availability_report">Availability Report</string>
+    <string name="retrieve_report">Retrieve Report</string>
+    <string name="population">Population</string>
+    <string name="availability">Availability</string>
+    <string name="threshold_populate">Threshold (94%)</string>
+    <string name="threshold_avail">Threshold (99.85%)</string>
+    <string name="sign_in">Sign In</string>
+    <string name="smartfren_digital_operation">Smartfren Digital Operation</string>
+    <string name="regional_operation">Regional Operation</string>
+    <string name="activity_form">Activity Form</string>
+    <string name="activity_log">Activity Log</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="reg_operation">Reg. Operation</string>
+    <string name="reg_support">Reg. Support</string>
+    <string name="core_facility">Core Facility</string>
+    <string name="site_info">Site Info</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="telephone">Telephone</string>
+    <string name="send">Send</string>
+    <string name="reference">Reference</string>
+    <string name="site">Site</string>
+    <string name="id">ID</string>
+    <string name="old_id">Old ID</string>
+    <string name="id_fap">ID FAP</string>
+    <string name="id_cdma">ID CDMA</string>
+    <string name="city">City</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="om">OM</string>
+    <string name="manager">Manager</string>
+    <string name="area_coordinator">Area Coordinator</string>
+    <string name="cluster_pic">Cluster PIC</string>
+    <string name="tower">Tower</string>
+    <string name="provider_group">Provider Group</string>
+    <string name="activity_location">Activity Location</string>
+    <string name="ccf_validation">CCF Validation</string>
+    <string name="sme_validation">SME Validation</string>
+    <string name="validate">Validate</string>
+    <string name="sme_activity_report_detail">NFM Activity Report Detail</string>
+    <string name="register_date">Register Date</string>
+    <string name="your_tasks">Your tasks</string>
+    <string name="please_select_one_to_show_data">Please select one to show data.</string>
+    <string name="filter">Filter</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">Ok</string>
+    <string name="monthly">Monthly</string>
+    <string name="weekly">Weekly</string>
+    <string name="daily">Daily</string>
+    <string name="all_region">All Region</string>
+    <string name="jb">JB</string>
+    <string name="ns">NS</string>
+    <string name="ss">SS</string>
+    <string name="wj">WJ</string>
+    <string name="cj">CJ</string>
+    <string name="ej">EJ</string>
+    <string name="sk">SK</string>
+    <string name="update_success">Update Success</string>
+    <string name="add_success">Add Success</string>
+    <string name="task_has_been_update">Task has been update.</string>
+    <string name="schedule_date">Schedule Date</string>
+    <string name="please_select_region">Please select region.</string>
+    <string name="please_select_period">Please select period.</string>
+    <string name="highest">Highest</string>
+    <string name="lowest">Lowest</string>
+    <string name="current">Current</string>
+    <string name="id_num">ID Num</string>
+    <string name="your_current_tagging">Your current tagging</string>
+    <string name="available">Available</string>
+    <string name="on_leave">On Leave</string>
+    <string name="permission">Permission</string>
+    <string name="to_update_your_tagging_press_the_button">To update your tagging, press the button</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="view_profile">View Profile</string>
+    <string name="add_photo_before">add photo before</string>
+    <string name="add_photo_after">add photo after</string>
+    <string name="add">Add</string>
+    <string name="pass">PASS</string>
+    <string name="fail">FAIL</string>
+    <string name="na">NA</string>
+    <string name="complete">Complete</string>
+    <string name="on_progress">On Progress</string>
+    <string name="propose_to_close">Propose to Close</string>
+    <string name="closed">Closed</string>
+    <string name="pending">Pending</string>
+    <string name="reject">Reject</string>
+    <string name="profile">Profile</string>
+    <string name="not_validated">NOT VALIDATED</string>
+    <string name="material_delivery_request">Material Delivery Request</string>
+    <string name="post_mortem_emergency">Post Mortem</string>
+    <string name="wo_mttr"><![CDATA[WO & MTTR]]></string>
+    <string name="ccf">CCF</string>
+    <string name="tracker">Tracker</string>
+    <string name="stom">STOM</string>
+    <string name="fixed_genset_issue">Fixed Genset Issue</string>
+    <string name="battery">Battery</string>
+    <string name="air_cond">Air Cond</string>
+    <string name="grounding">Grounding</string>
+    <string name="tracker_issue_status">Tracker Issue Status</string>
+    <string name="air_cond_issue_status">Air Cond Issue Status</string>
+    <string name="landscape">Landscape</string>
+    <string name="landscape_issue_status">Landscape Issue Status</string>
+    <string name="accessibility">Accessibility</string>
+    <string name="accessibility_issue_status">Accessibility Issue Status</string>
+    <string name="accessibility_open_only">Accessibility Open Only</string>
+    <string name="travelling_time_issue_status">Travelling Time Issue Status</string>
+    <string name="travelling">Travelling</string>
+    <string name="imb">IMB</string>
+    <string name="imb_issue_status">IMB Issue Status</string>
+    <string name="worstcell">WorstCell</string>
+    <string name="worst_cell_repetitive_issue_status">Worst Cell Repetitive Issue Status</string>
+    <string name="visibility_alarm_fgs">Visibility Alarm FGS</string>
+    <string name="visibility_alarm_fgs_low">Visibility Alarm GFS - Low Fuel Alarm Sensor</string>
+    <string name="problematic_cluster">Problematic Cluster</string>
+    <string name="problematic_cluster_issue_status">Problematic Cluster Issue Status</string>
+    <string name="accessibility_issue_open">Accessibility Issue - Open Only</string>
+    <string name="battery_improvement_status">Battery Improvement Status</string>
+    <string name="request_date">Request Date</string>
+    <string name="nweeks">N Weeks</string>
+    <string name="nweeks_worst_cell">N Weeks - Worst Cell</string>
+    <string name="general_info">General Info</string>
+    <string name="operation_info">Operation Info</string>
+    <string name="tower_provider_management_info">Tower Provider Management Info</string>
+    <string name="electricity_info">Electricity Info</string>
+    <string name="pm_info">PM Info</string>
+    <string name="site_management_info">Site Management Info</string>
+    <string name="submit">Submit</string>
+    <string name="site_visit">Site Visit</string>
+    <string name="check_in">Check In</string>
+    <string name="check_out">Check Out</string>
+    <string name="womttr"><![CDATA[WO & MTTR]]></string>
+    <string name="ccf_daily">CCF Daily</string>
+    <string name="ccf_weekly">CCF Weekly</string>
+    <string name="ccf_monthly">CCF Monthly</string>
+    <string name="ccf_qs"><![CDATA[CCF Quarter & Semesterly]]></string>
+    <string name="ccf_yearly">CCF Yearly</string>
+    <string name="network_inventory">Network Inventory</string>
+    <string name="consumable_usage_report">Consumable Usage report</string>
+    <string name="ttwo_rca_validation">TT/WO RCA Validation</string>
+    <string name="isse_tracker_register">Issue Tracker Register</string>
+    <string name="issue_tracker_validation">Issue Tracker Validation</string>
+    <string name="data_hub">Data Hub</string>
+    <string name="open">Open</string>
+    <string name="resolve">Resolve</string>
+    <string name="please_make_sure_you_report">Please make sure you report every site visit activity. Click on check in during arrival and don’t forget to check out if your activity has been completed.</string>
+    <string name="report_task">Report Task</string>
+    <string name="add_form">Add Form</string>
+    <string name="additional_item">Additional Item</string>
+    <string name="done">DONE</string>
+    <string name="not_done">NOT DONE</string>
+    <string name="update_rca">Update RCA</string>
+    <string name="ttworca">TT/WO RCA</string>
+    <string name="ttworca_detail">TT/WO RCA Detail</string>
+    <string name="tracker_manager">Tracker Manager</string>
+    <string name="enter_site_id_as_parameter">Enter Site ID as parameter.</string>
+    <string name="tracker_risk">Tracker Risk</string>
+    <string name="add_tracker_risk">Add Tracker Risk</string>
+    <string name="trracker_risk_detail">Tracker Risk Detail</string>
+    <string name="tracker_manager_detail">Tracker Manager Detail</string>
+    <string name="edit_tracker_risk">Edit Tracker Risk</string>
+    <string name="regional_user_manager">Regional User Manager</string>
+    <string name="regional_user_manager_detail">Regional User Manager Detail</string>
+    <string name="phone">Phone</string>
+    <string name="level">Level</string>
+    <string name="user_status">User Status</string>
+    <string name="direct_superior">Direct Superior</string>
+    <string name="company">Company</string>
+    <string name="upda_regional_user">Update Regional User</string>
+    <string name="validation">Validation</string>
+    <string name="parent">Parent</string>
+    <string name="live_flm_activity">Live FLM Activity</string>
+    <string name="material">Material</string>
+    <string name="stolen">Stolen</string>
+    <string name="risk_group_level_1">Risk Group Level 1</string>
+    <string name="risk_group_level_2">Risk Group Level 2</string>
+    <string name="problem_desc">Problem Desc</string>
+    <string name="user_complaint">User Complaint</string>
+    <string name="pic">PIC</string>
+    <string name="action_desc">Action Desc</string>
+    <string name="date_reported">Date - Reported</string>
+    <string name="date_target">Date - Target</string>
+    <string name="date_resolved">Date - Resolved</string>
+    <string name="action_taken">Action Taken</string>
+    <string name="root_cause_desc">Root Cause Desc</string>
+    <string name="date_of_loss">Date of Loss</string>
+    <string name="existing_site_security">Existing Site Security</string>
+    <string name="stolen_material">Stolen Material</string>
+    <string name="documentation">Documentation</string>
+    <string name="chronology_report">Chronology Report</string>
+    <string name="police_report">Police Report</string>
+    <string name="documentation_chronology">Documentation Chronology</string>
+    <string name="recovery_security_improvement">Recovery - Security Improvement</string>
+    <string name="documentation_sir">Documentation SIR</string>
+    <string name="investigation_report">Investigation Report</string>
+    <string name="msg_token_fmt" translatable="false">FCM registration Token: %s</string>
+    <string name="stolen_report_has_been_add">Stolen report has been add.</string>
+    <string name="edit">Edit</string>
+    <string name="sent">Sent</string>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="lte_cellular_info">LTE Cellular Info\n\n</string>
+    <string name="umts_cellular_info">UMTS Cellular Info\n\n</string>
+    <string name="gsm_cellular_info">GSM Cellular Info\n\n</string>
+    <string name="cdma_cellular_info">CDMA Cellular Info\n\n</string>
+
+    <string-array name="item_type">
+        <item>BY VISIT</item>
+        <item>BY REMOTE</item>
+    </string-array>
+
+    <string-array name="item_month">
+        <item>Month</item>
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+    <string-array name="item_status">
+        <item>PROPOSE TO CLOSE</item>
+        <item>PENDING</item>
+        <item>REJECT</item>
+    </string-array>
+
+    <string-array name="item_region">
+        <item>JB</item>
+        <item>NS</item>
+        <item>SS</item>
+        <item>WJ</item>
+        <item>CJ</item>
+        <item>EJ</item>
+        <item>SK</item>
+    </string-array>
+
+    <string-array name="item_priority">
+        <item>P0</item>
+        <item>P1</item>
+        <item>P2</item>
+    </string-array>
+
+    <string-array name="item_element">
+        <item>NOT AVAILABLE</item>
+        <item>AVAILABLE</item>
+    </string-array>
+
+    <string-array name="item_status_checklist">
+        <item>FAIL</item>
+        <item>PASS</item>
+        <item>NA</item>
+    </string-array>
+
+    <string-array name="webch_region">
+        <item>All Region</item>
+        <item>JB</item>
+        <item>NS</item>
+        <item>SS</item>
+        <item>WJ</item>
+        <item>CJ</item>
+        <item>EJ</item>
+        <item>SK</item>
+    </string-array>
+
+    <string-array name="webch_period">
+        <item>Period</item>
+        <item>Daily</item>
+        <item>Weekly</item>
+        <item>Monthly</item>
+    </string-array>
+
+    <string-array name="item_risk_status">
+        <item>Open</item>
+        <item>Resolve</item>
+        <item>Cancel</item>
+    </string-array>
+
+    <string-array name="item_risk_status_close">
+        <item>Close</item>
+    </string-array>
+
+    <string-array name="leasedue">
+        <item>Overdue</item>
+        <item>Not Yet Overdue</item>
+    </string-array>
+
+    <string-array name="status_mdr">
+        <item>DRAFT</item>
+        <item>SENT</item>
+        <item>CLOSED</item>
+    </string-array>
+
+    <string-array name="status_incident_wo">
+        <item>NEW</item>
+        <item>DEPART</item>
+        <item>ARRIVE</item>
+        <item>TROUBLESHOOT</item>
+        <item>RESOLVED</item>
+        <item>CLOSED</item>
+    </string-array>
+
+</resources>

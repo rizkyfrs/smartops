@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.smartfren.smartops">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name="com.smartfren.smartops.MainApp"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher_smartops"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_smartops"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true"
+        android:theme="@style/Theme.Design.Light.NoActionBar">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${GOOGLE_MAPS_API_KEY}" />
+        <activity
+            android:name="com.smartfren.smartops.ui.base.SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="FIREBASE_NOTIFICATION_CLICK" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.testsignal.TestSignalActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.login.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.home.HomepageActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.home.ChangePasswordActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.home.PersonalInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.dailyactivity.DailyActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.corefacility.ccfreport.CCFReportActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.corefacility.ccfreport.CCFReportDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.corefacility.nfmtiket.NFMTicketActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.corefacility.nfmtiket.NFMTicketDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.reportactivity.ActivityReportActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.reportactivity.ActivityChecklistActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.history.MyHistoryActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.reportactivity.ActivityReportAddActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.reportactivity.ActivityChecklistUpdateActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.dailyactivity.ScheduleTaskListDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.dailyactivity.ScheduleViewTaskDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.dailyactivity.ScheduleUpdateTaskActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.reportpm.ReportSiteActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.reportpm.ReportViewPdfActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.webch.WebCHAvailabilityActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.webch.LineChartActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.home.MenuRegionalOperationActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.dailyactivity.ScheduleAddTaskActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smartfren.smartops.ui.corefacility.MenuCoreFacilityActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.materialdeliveryrequest.MDRActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.materialdeliveryrequest.MDRAddTaskActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.networkinventory.NetworkInventoryActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.postmortememergency.PMEActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.tracker.MenuTrackerActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.stom.MenuSTOMActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.tracker.fgs.TrackerFGSActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.tracker.battery.TrackerBatteryActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.tracker.ac.TrackerACActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.tracker.grounding.TrackerGroundingActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.tracker.landscape.TrackerLandscapeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.tracker.accessibility.TrackerAccessibilityActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.tracker.travelling.TrackerTravellingActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.tracker.worstcell.TrackerWortCellActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.tracker.visibility.TrackerVisibilityActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.tracker.problematic.TrackerProblematicActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.tracker.imb.TrackerIMBActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.availability.AvailabilityActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.stom.STOMPerformActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.stom.STOMRenewalActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.tracker.nweeks.TrackerNWeeksActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.sitemanagementinfo.SiteManagementInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.sitemanagementinfo.SiteManagementInfoDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.sitevisit.SiteVisitLogActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.consumable.ConsumableUsageActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.consumable.ConsumableUsageDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.consumable.ConsumableUsageAddActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.womttr.WOMTTRActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.ccf.CCFActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.tracker.risk.TrackerRiskAddActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.tracker.risk.TrackerRiskActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.tracker.risk.TrackerRiskDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.networkinventory.NetworkInventoryActivity2" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.ttwo.TTWOActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.tracker.risk.TrackerRiskGHActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.ttwo.TTWOAddActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.ttwo.TTWODetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.datahub.MenuDataHubActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.dashboard.MenuDashboardActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.regionaloperation.MenuRegionalOperationActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.regionalusermanager.RegionalUserManagerActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.regionalusermanager.RegionalUserManagerDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.regionalusermanager.RegionalUserManagerAddActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.liveflm.LiveFLMActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.gis.GISActivity" />
+        <activity android:name=".ui.gis.MarkerDemoActivity" />
+        <activity android:name=".ui.gis.BigClusteringDemoActivity" />
+        <activity android:name=".ui.gis.ClusteringDemoActivity" />
+        <activity android:name=".ui.operationautomation.MenuOperationAutomationActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.noc.MenuNOCActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.regionaloperation.MenuRegionalOperationNewActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.material.MenuMaterialActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.nos.MenuNOSActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.gis.CustomMarkerClusteringDemoActivity" />
+        <activity android:name=".utils.DialogDetailDevice" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.stolen.StolenReportAddActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.stolen.StolenReportActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.stolen.StolenReportDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.stolen.StolenSiteReportActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.renewal.RenewalSiteReportActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.corefacility.MenuCoreFacilityActivityNew" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.changemanagement.MenuChangeManagementActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.powermanagement.MenuPowerManagementActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.supportmanagement.MenuSupportManagementActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.towermanagement.MenuTowerManagementActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.taskmanagement.MenuTaskManagementActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.workordermanagement.MenuWorkorderManagementActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.faultmanagement.MenuFaultManagementActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.fibermanagement.MenuFiberManagementActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.materialmanagement.MenuMaterialManagementActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.reportingmanagement.MenuReportingManagementActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.resourcemanagement.MenuResourceManagementActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.materialmanagement.SubMenuMaterialManagementActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.workordermanagement.WorkorderActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.workordermanagement.WorkorderDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.workordermanagement.WorkorderUpdateActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.nfm.NFMListActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.nfm.NFMDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.nfm.NFMHomeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.nfm.NFMAlarmActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".utils.AlertDialogActivity" android:theme="@style/Theme.AppCompat.Translucent"/>
+
+        <service android:name=".utils.StopwatchService" />
+
+        <service
+            android:name=".fcm.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:name=".utils.BackgroundSoundService" android:stopWithTask="false"/>
+
+<!--        <service android:name=".utils.MusicService" />-->
+
+<!--        <receiver-->
+<!--            android:name=".utils.NotificationReceiver"-->
+<!--            android:exported="false">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.BOOT_COMPLETED"></action>-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
+    </application>
+
+</manifest>

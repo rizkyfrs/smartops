@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:background="@drawable/button_white">
+
+    <TextView
+        android:id="@+id/tvTitlePopup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/filter"
+        android:textColor="@color/color_grey"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitleRegion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/region"
+        android:textColor="@color/color_grey"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/rgRegion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitlePopup" />
+
+    <RadioGroup
+        android:id="@+id/rgRegion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="vertical"
+        android:paddingVertical="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleRegion">
+
+        <RadioGroup
+            android:id="@+id/regionOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbAllRegion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rb_selector"
+                android:button="@color/color_transparent"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="3dp"
+                android:text="@string/all_region"
+                android:textColor="@drawable/text_selected" />
+
+            <RadioButton
+                android:id="@+id/rbJB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/rb_selector"
+                android:button="@color/color_transparent"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="3dp"
+                android:text="@string/jb"
+                android:textColor="@drawable/text_selected" />
+
+            <RadioButton
+                android:id="@+id/rbNS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/rb_selector"
+                android:button="@color/color_transparent"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="3dp"
+                android:text="@string/ns"
+                android:textColor="@drawable/text_selected" />
+
+            <RadioButton
+                android:id="@+id/rbSS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/rb_selector"
+                android:button="@color/color_transparent"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="3dp"
+                android:text="@string/ss"
+                android:textColor="@drawable/text_selected" />
+
+            <RadioButton
+                android:id="@+id/rbWJ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/rb_selector"
+                android:button="@color/color_transparent"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="3dp"
+                android:text="@string/wj"
+                android:textColor="@drawable/text_selected" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/regionTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbCJ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rb_selector"
+                android:button="@color/color_transparent"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="3dp"
+                android:text="@string/cj"
+                android:textColor="@drawable/text_selected" />
+
+            <RadioButton
+                android:id="@+id/rbEJ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/rb_selector"
+                android:button="@color/color_transparent"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="3dp"
+                android:text="@string/ej"
+                android:textColor="@drawable/text_selected" />
+
+            <RadioButton
+                android:id="@+id/rbSK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/rb_selector"
+                android:button="@color/color_transparent"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="3dp"
+                android:text="@string/sk"
+                android:textColor="@drawable/text_selected" />
+
+        </RadioGroup>
+
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvTitlePeriod"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/period"
+        android:textColor="@color/color_grey"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/rgPeriod"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rgRegion" />
+
+    <RadioGroup
+        android:id="@+id/rgPeriod"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="horizontal"
+        android:paddingVertical="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitlePeriod">
+
+        <RadioButton
+            android:id="@+id/rbDaily"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rb_selector"
+            android:button="@color/color_transparent"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="3dp"
+            android:text="@string/daily"
+            android:textColor="@drawable/text_selected" />
+
+        <RadioButton
+            android:id="@+id/rbWeekly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/rb_selector"
+            android:button="@color/color_transparent"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="3dp"
+            android:text="@string/weekly"
+            android:textColor="@drawable/text_selected" />
+
+        <RadioButton
+            android:id="@+id/rbMonthly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/rb_selector"
+            android:button="@color/color_transparent"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="3dp"
+            android:text="@string/monthly"
+            android:textColor="@drawable/text_selected" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnOk"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/button_pink"
+        android:text="@string/ok"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/btnCancel"
+        app:layout_constraintEnd_toStartOf="@id/btnCancel"
+        app:layout_constraintTop_toTopOf="@id/btnCancel" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/rb_unselected"
+        android:text="@string/cancel"
+        android:textAllCaps="false"
+        android:textColor="@color/color_pink"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rgPeriod" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

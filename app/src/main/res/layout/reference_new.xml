@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clAppBar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/color_pink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:rotation="180"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitleActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reference"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/color_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clAppBar">
+
+        <TextView
+            android:id="@+id/tvReferenceInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:padding="10dp"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/ic_wifi"
+            app:drawableTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clInfo">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.mapbox.mapboxsdk.maps.MapView
+                android:id="@+id/mapViewReference"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvReferenceOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toTopOf="@id/cvReferenceTwo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mapViewReference">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tvTitleReferenceSite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/site"
+                            android:textColor="@color/color_grey"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/tvTitleReferenceSiteID"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvTitleReferenceSiteID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/id"
+                            android:textColor="@color/color_grey"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvTitleReferenceSite" />
+
+                        <TextView
+                            android:id="@+id/tvReferenceSiteID"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:text="-"
+                            android:textColor="@color/color_grey"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@id/tvReferenceOldID"
+                            app:layout_constraintStart_toStartOf="@id/tvTitleReferenceSiteID"
+                            app:layout_constraintTop_toBottomOf="@id/tvTitleReferenceSiteID" />
+
+                        <TextView
+                            android:id="@+id/tvTitleReferenceOldID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/old_id"
+                            android:textColor="@color/color_grey"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toTopOf="@id/tvReferenceOldID"
+                            app:layout_constraintStart_toStartOf="@id/tvReferenceOldID"
+                            app:layout_constraintTop_toBottomOf="@id/tvTitleReferenceSite" />
+
+                        <TextView
+                            android:id="@+id/tvReferenceOldID"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:text="-"
+                            android:textColor="@color/color_grey"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@id/tvReferenceStatus"
+                            app:layout_constraintStart_toEndOf="@id/tvReferenceSiteID"
+                            app:layout_constraintTop_toBottomOf="@id/tvTitleReferenceSiteID" />
+
+                        <TextView
+                            android:id="@+id/tvTitleReferenceStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/status"
+                            android:textColor="@color/color_grey"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toTopOf="@id/tvReferenceStatus"
+                            app:layout_constraintStart_toStartOf="@id/tvReferenceStatus"
+                            app:layout_constraintTop_toBottomOf="@id/tvTitleReferenceSite" />
+
+                        <TextView
+                            android:id="@+id/tvReferenceStatus"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="-"
+                            android:textColor="@color/color_grey"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvReferenceOldID"
+                            app:layout_constraintTop_toBottomOf="@id/tvTitleReferenceSiteID" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clReferences"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvReferenceSiteID">
+
+                            <TextView
+                                android:id="@+id/tvTitleReferenceIDFAP"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/id_fap"
+                                android:textColor="@color/color_grey"
+                                android:textSize="12sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvReferenceIDFAP"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:text="-"
+                                android:textColor="@color/color_grey"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@id/tvReferenceIDCDMA"
+                                app:layout_constraintStart_toStartOf="@id/tvTitleReferenceIDFAP"
+                                app:layout_constraintTop_toBottomOf="@id/tvTitleReferenceIDFAP" />
+
+                            <TextView
+                                android:id="@+id/tvTitleReferenceIDCDMA"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/id_cdma"
+                                android:textColor="@color/color_grey"
+                                android:textSize="12sp"
+                                app:layout_constraintStart_toStartOf="@id/tvReferenceIDCDMA"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvReferenceIDCDMA"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="-"
+                                android:textColor="@color/color_grey"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/tvReferenceIDFAP"
+                                app:layout_constraintTop_toBottomOf="@id/tvTitleReferenceIDCDMA" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clSiteName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/clReferences">
+
+                            <TextView
+                                android:id="@+id/tvTitleReferenceSiteName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="@string/name"
+                                android:textColor="@color/color_grey"
+                                android:textSize="12sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvReferenceSiteName"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:text="-"
+                                android:textColor="@color/color_grey"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@id/tvReferenceCity"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tvTitleReferenceSiteName" />
+
+                            <TextView
+                                android:id="@+id/tvTitleReferenceSiteCity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="@string/city"
+                                android:textColor="@color/color_grey"
+                                android:textSize="12sp"
+                                app:layout_constraintStart_toStartOf="@id/tvReferenceCity"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvReferenceCity"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="-"
+                                android:textColor="@color/color_grey"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/tvReferenceSiteName"
+                                app:layout_constraintTop_toBottomOf="@id/tvTitleReferenceSiteCity" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clLatlong"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/clSiteName">
+
+                            <TextView
+                                android:id="@+id/tvTitleReferenceLat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="@string/latitude"
+                                android:textColor="@color/color_grey"
+                                android:textSize="12sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvReferenceLatitude"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:text="-"
+                                android:textColor="@color/color_grey"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@id/tvReferenceLongitude"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tvTitleReferenceLat" />
+
+                            <TextView
+                                android:id="@+id/tvTitleReferenceLong"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="@string/longitude"
+                                android:textColor="@color/color_grey"
+                                android:textSize="12sp"
+                                app:layout_constraintStart_toStartOf="@id/tvReferenceLongitude"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvReferenceLongitude"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="-"
+                                android:textColor="@color/color_grey"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/tvReferenceLatitude"
+                                app:layout_constraintTop_toBottomOf="@id/tvTitleReferenceLong" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            android:id="@+id/tvTitleReferenceOM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/om"
+                            android:textColor="@color/color_grey"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/clLatlong" />
+
+                        <TextView
+                            android:id="@+id/tvTitleReferenceOMManager"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/manager"
+                            android:textColor="@color/color_grey"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvTitleReferenceOM" />
+
+                        <TextView
+                            android:id="@+id/tvReferenceOMManager"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textColor="@color/color_grey"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/tvTitleReferenceOMManager"
+                            app:layout_constraintTop_toBottomOf="@id/tvTitleReferenceOMManager" />
+
+                        <TextView
+                            android:id="@+id/tvTitleReferenceOMAC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/area_coordinator"
+                            android:textColor="@color/color_grey"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvReferenceOMManager" />
+
+                        <TextView
+                            android:id="@+id/tvReferenceOMAC"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textColor="@color/color_grey"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/tvTitleReferenceOMAC"
+                            app:layout_constraintTop_toBottomOf="@id/tvTitleReferenceOMAC" />
+
+                        <TextView
+                            android:id="@+id/tvTitleReferenceOMPIC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/cluster_pic"
+                            android:textColor="@color/color_grey"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvReferenceOMAC" />
+
+                        <TextView
+                            android:id="@+id/tvReferenceOMPIC"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textColor="@color/color_grey"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/tvTitleReferenceOMPIC"
+                            app:layout_constraintTop_toBottomOf="@id/tvTitleReferenceOMPIC" />
+
+                        <TextView
+                            android:id="@+id/tvTitleReferenceTower"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/tower"
+                            android:textColor="@color/color_grey"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvReferenceOMPIC" />
+
+                        <TextView
+                            android:id="@+id/tvTitleReferenceTowerPG"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/provider_group"
+                            android:textColor="@color/color_grey"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvTitleReferenceTower" />
+
+                        <TextView
+                            android:id="@+id/tvReferenceTowerPG"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textColor="@color/color_grey"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/tvTitleReferenceTowerPG"
+                            app:layout_constraintTop_toBottomOf="@id/tvTitleReferenceTowerPG" />
+
+                        <TextView
+                            android:id="@+id/tvTitleReferenceTowerProvider"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/provider_group"
+                            android:textColor="@color/color_grey"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvReferenceTowerPG" />
+
+                        <TextView
+                            android:id="@+id/tvReferenceTowerProvider"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textColor="@color/color_grey"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/tvTitleReferenceTowerProvider"
+                            app:layout_constraintTop_toBottomOf="@id/tvTitleReferenceTowerProvider" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvReferenceTwo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:paddingBottom="20dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/spaceBottom"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cvReferenceOne">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/ivIconItem"
+                        android:layout_width="50dp"
+                        android:layout_height="0dp"
+                        android:background="@color/color_pink"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_wifi"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:padding="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ivIconItem"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tvReferenceSite"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textColor="@color/color_grey"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@id/tvReferencePeriod"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvReferencePeriod"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textColor="@color/color_grey"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@id/tvReferenceSite"
+                            app:layout_constraintStart_toStartOf="@id/tvReferenceSite"
+                            app:layout_constraintTop_toBottomOf="@id/tvReferenceSite" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:id="@+id/spaceBottom"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cvReferenceTwo" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

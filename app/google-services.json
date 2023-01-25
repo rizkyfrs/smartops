@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "483201405163",
+    "project_id": "smartops-46d36",
+    "storage_bucket": "smartops-46d36.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483201405163:android:a188471c5b2b6fd32d2eae",
+        "android_client_info": {
+          "package_name": "com.smartfren.smartops"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "483201405163-grv944fudmfo3oout4sgn4762jclujtf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCohwYGytjW6Uo_TrNNtW701eOftFEkIAA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "483201405163-grv944fudmfo3oout4sgn4762jclujtf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clAppBar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/color_pink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:rotation="180"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitleAppBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_task"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/clAppBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tvTitleAddActivityRegion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/region"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@id/etAddActivityRegion"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etAddActivityRegion"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/border_grey"
+                android:padding="10dp"
+                android:textColor="@color/color_grey"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@id/tvTitleAddActivityGroup"
+                app:layout_constraintEnd_toStartOf="@id/tvAddSiteID"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleAddActivityRegion" />
+
+            <TextView
+                android:id="@+id/tvTitleAddSiteID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/site_id"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@id/etAddActivityRegion"
+                app:layout_constraintStart_toStartOf="@id/tvAddSiteID"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvAddSiteID"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/border_grey"
+                android:gravity="center_vertical"
+                android:hint="ZJKT_XXXX"
+                android:lines="1"
+                android:padding="10dp"
+                android:textColor="@color/color_grey"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/etAddActivityRegion"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleAddSiteID" />
+
+            <TextView
+                android:id="@+id/tvTitleAddActivityGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/activity_group"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@id/clActivityGroup"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etAddActivityRegion" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clActivityGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_grey"
+                app:layout_constraintBottom_toTopOf="@id/tvTitleAddActionType"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleAddActivityGroup">
+
+                <Spinner
+                    android:id="@+id/spActivityGroup"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvTitleAddActionType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/activity_type"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@id/clActivityType"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clActivityGroup" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clActivityType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleAddActionType">
+
+                <Spinner
+                    android:id="@+id/spActivityType"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvTitleAddDateExe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/activity_date"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clActivityType" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clAddActivityDate"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:background="@drawable/border_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleAddDateExe">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAddActivityDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btnAddActivityDate"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/btnAddActivityDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:src="@drawable/icon_calendar"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/color_grey" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvTitleAddElementAvail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/element_available"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@id/clElementAvail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clAddActivityDate" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clElementAvail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleAddElementAvail">
+
+                <Spinner
+                    android:id="@+id/spElementAvail"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvTitleAddActivityNotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/activity_notes"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@id/etAddActivityNotes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clElementAvail" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etAddActivityNotes"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:background="@drawable/border_grey"
+                android:padding="10dp"
+                android:textColor="@color/color_grey"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleAddActivityNotes" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSaveAddTask"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button_pink"
+                android:text="@string/save"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/vSpaceAddFormTask"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etAddActivityNotes" />
+
+            <View
+                android:id="@+id/vSpaceAddFormTask"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnSaveAddTask" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

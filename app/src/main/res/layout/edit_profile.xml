@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clAppBar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/color_pink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:rotation="180"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitleAppBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/profile"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_dashboard"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clAppBar">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/img_account"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvUsernames"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivProfile" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clHeader">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvEditProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@color/white"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/vSpaceEditProfile"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp">
+
+                    <TextView
+                        android:id="@+id/tvEditProfileIDNum"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/id_num"
+                        android:textColor="@color/color_grey"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/etEditProfileIDNum"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etEditProfileIDNum"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_grey"
+                        android:padding="10dp"
+                        android:textColor="@color/color_grey"
+                        app:layout_constraintEnd_toEndOf="@id/tvEditProfileIDNum"
+                        app:layout_constraintStart_toStartOf="@id/tvEditProfileIDNum"
+                        app:layout_constraintTop_toBottomOf="@id/tvEditProfileIDNum" />
+
+                    <TextView
+                        android:id="@+id/tvEditProfileName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/name"
+                        android:textColor="@color/color_grey"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/etEditProfileName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/etEditProfileIDNum" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etEditProfileName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_grey"
+                        android:padding="10dp"
+                        android:textColor="@color/color_grey"
+                        app:layout_constraintEnd_toEndOf="@id/tvEditProfileName"
+                        app:layout_constraintStart_toStartOf="@id/tvEditProfileName"
+                        app:layout_constraintTop_toBottomOf="@id/tvEditProfileName" />
+
+                    <TextView
+                        android:id="@+id/tvEditProfileEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/email"
+                        android:textColor="@color/color_grey"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/etEditProfileEmail"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/etEditProfileName" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etEditProfileEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/border_grey"
+                        android:padding="10dp"
+                        android:textColor="@color/color_grey"
+                        app:layout_constraintEnd_toEndOf="@id/tvEditProfileEmail"
+                        app:layout_constraintStart_toStartOf="@id/tvEditProfileEmail"
+                        app:layout_constraintTop_toBottomOf="@id/tvEditProfileEmail" />
+
+                    <TextView
+                        android:id="@+id/tvEditProfileTelp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/telephone"
+                        android:textColor="@color/color_grey"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/etEditProfileTelp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/etEditProfileEmail" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etEditProfileTelp"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/border_grey"
+                        android:padding="10dp"
+                        android:textColor="@color/color_grey"
+                        app:layout_constraintEnd_toEndOf="@id/tvEditProfileTelp"
+                        app:layout_constraintStart_toStartOf="@id/tvEditProfileTelp"
+                        app:layout_constraintTop_toBottomOf="@id/tvEditProfileTelp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clEditLatitude"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/etEditProfileTelp">
+
+                        <TextView
+                            android:id="@+id/tvEditLatitude"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/latitude"
+                            android:textColor="@color/color_grey"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etEditLatitude"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/border_grey"
+                            android:padding="10dp"
+                            android:textColor="@color/color_grey"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvEditLatitude" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clEditLongitude"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/clEditLatitude">
+
+                        <TextView
+                            android:id="@+id/tvEditLongitude"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/longitude"
+                            android:textColor="@color/color_grey"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etEditLongitude"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/border_grey"
+                            android:padding="10dp"
+                            android:textColor="@color/color_grey"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvEditLongitude" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnSaveEditProfile"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_pink"
+                        android:text="@string/update_profile"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/clEditLongitude" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:id="@+id/vSpaceEditProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cvEditProfile" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

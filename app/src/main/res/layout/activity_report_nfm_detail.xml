@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clAppBar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/color_pink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:rotation="180"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitleAppBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sme_activity_report_detail"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@color/white"
+        android:elevation="5dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clAppBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tvTitleNFMTicketNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nfm_ticket_num"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvNFMTicketNum"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvNFMTicketNum"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="-"
+                android:textColor="@color/color_grey"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/tvNFMAlarmCode"
+                app:layout_constraintStart_toStartOf="@id/tvTitleNFMTicketNum"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleNFMTicketNum" />
+
+            <TextView
+                android:id="@+id/tvTitleNFMAlarmCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nfm_alarm_code"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvNFMAlarmCode"
+                app:layout_constraintStart_toStartOf="@id/tvNFMAlarmCode"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvNFMAlarmCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="-"
+                android:textColor="@color/color_grey"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvNFMTicketNum"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleNFMAlarmCode" />
+
+            <TextView
+                android:id="@+id/tvTitleNFMAlarmValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/nfm_alarm_value"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvNFMAlarmValue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvNFMAlarmCode" />
+
+            <TextView
+                android:id="@+id/tvNFMAlarmValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textColor="@color/color_grey"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleNFMAlarmValue" />
+
+            <TextView
+                android:id="@+id/tvTitleNFMAlarmLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/nfm_alarm_location"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvNFMAlarmLocation"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvNFMAlarmValue" />
+
+            <TextView
+                android:id="@+id/tvNFMAlarmLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="-"
+                android:textColor="@color/color_grey"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/tvNFMActivityLocation"
+                app:layout_constraintStart_toStartOf="@id/tvTitleNFMAlarmLocation"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleNFMAlarmLocation" />
+
+            <TextView
+                android:id="@+id/tvTitleNFMActivityLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/activity_location"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvNFMActivityLocation"
+                app:layout_constraintStart_toStartOf="@id/tvNFMActivityLocation"
+                app:layout_constraintTop_toBottomOf="@id/tvNFMAlarmValue" />
+
+            <TextView
+                android:id="@+id/tvNFMActivityLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="-"
+                android:textColor="@color/color_grey"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvNFMAlarmLocation"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleNFMActivityLocation" />
+
+            <TextView
+                android:id="@+id/tvTitleNFMActivityReport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/activity_report"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvNFMActivityReport"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvNFMAlarmLocation" />
+
+            <TextView
+                android:id="@+id/tvNFMActivityReport"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="-"
+                android:textColor="@color/color_grey"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/tvNFMActivityLocation"
+                app:layout_constraintStart_toStartOf="@id/tvTitleNFMActivityReport"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleNFMActivityReport" />
+
+            <TextView
+                android:id="@+id/tvTitleNFMActivityPIC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/register_date"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvNFMActivityRegisDate"
+                app:layout_constraintStart_toStartOf="@id/tvNFMActivityRegisDate"
+                app:layout_constraintTop_toBottomOf="@id/tvNFMActivityLocation" />
+
+            <TextView
+                android:id="@+id/tvNFMActivityRegisDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="-"
+                android:textColor="@color/color_grey"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvNFMActivityReport"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleNFMActivityPIC" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnNFMValidation"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button_pink"
+                android:text="@string/validate"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvNFMActivityRegisDate" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

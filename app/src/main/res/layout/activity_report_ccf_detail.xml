@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clAppBar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/color_pink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:rotation="180"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitleAppBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ccf_activity_report"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@color/white"
+        android:elevation="5dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clAppBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tvTitleCCFActivityNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_number"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvCCFActivityNumber"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvCCFActivityNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="-"
+                android:textColor="@color/color_grey"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/tvCCFActivityName"
+                app:layout_constraintStart_toStartOf="@id/tvTitleCCFActivityNumber"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleCCFActivityNumber" />
+
+            <TextView
+                android:id="@+id/tvTitleCCFActivityName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_name"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvCCFActivityName"
+                app:layout_constraintStart_toStartOf="@id/tvCCFActivityName"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvCCFActivityName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="-"
+                android:textColor="@color/color_grey"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvCCFActivityNumber"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleCCFActivityName" />
+
+            <TextView
+                android:id="@+id/tvTitleCCFActivityType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/action_type"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvCCFActivityType"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCCFActivityName" />
+
+            <TextView
+                android:id="@+id/tvCCFActivityType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="-"
+                android:textColor="@color/color_grey"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/tvCCFActivityRegion"
+                app:layout_constraintStart_toStartOf="@id/tvTitleCCFActivityNumber"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleCCFActivityType" />
+
+            <TextView
+                android:id="@+id/tvTitleCCFActivityRegion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/activity_region"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvCCFActivityRegion"
+                app:layout_constraintStart_toStartOf="@id/tvCCFActivityRegion"
+                app:layout_constraintTop_toBottomOf="@id/tvCCFActivityName" />
+
+            <TextView
+                android:id="@+id/tvCCFActivityRegion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="-"
+                android:textColor="@color/color_grey"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvCCFActivityType"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleCCFActivityRegion" />
+
+            <TextView
+                android:id="@+id/tvTitleCCFActivityLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/activity_location"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvCCFActivityLocation"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCCFActivityRegion" />
+
+            <TextView
+                android:id="@+id/tvCCFActivityLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="-"
+                android:textColor="@color/color_grey"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/tvCCFActivityPIC"
+                app:layout_constraintStart_toStartOf="@id/tvTitleCCFActivityLocation"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleCCFActivityLocation" />
+
+            <TextView
+                android:id="@+id/tvTitleCCFActivityPIC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/nfm_activity_pic"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvCCFActivityPIC"
+                app:layout_constraintStart_toStartOf="@id/tvCCFActivityPIC"
+                app:layout_constraintTop_toBottomOf="@id/tvCCFActivityRegion" />
+
+            <TextView
+                android:id="@+id/tvCCFActivityPIC"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="-"
+                android:textColor="@color/color_grey"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvCCFActivityLocation"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleCCFActivityPIC" />
+
+            <TextView
+                android:id="@+id/tvTitleCCFActivityReport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/activity_report"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvCCFActivityReport"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCCFActivityPIC" />
+
+            <TextView
+                android:id="@+id/tvCCFActivityReport"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textColor="@color/color_hyperlink"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleCCFActivityReport" />
+
+            <TextView
+                android:id="@+id/tvTitleCCFActivityValidate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/ccf_validation"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvCCFActivityValidate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCCFActivityReport" />
+
+            <TextView
+                android:id="@+id/tvCCFActivityValidate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="-"
+                android:textColor="@color/color_grey"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/tvSMEActivityValidate"
+                app:layout_constraintStart_toStartOf="@id/tvTitleCCFActivityLocation"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleCCFActivityValidate" />
+
+            <TextView
+                android:id="@+id/tvTitleSMEActivityValidate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/sme_validation"
+                android:textColor="@color/color_grey"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvSMEActivityValidate"
+                app:layout_constraintStart_toStartOf="@id/tvSMEActivityValidate"
+                app:layout_constraintTop_toBottomOf="@id/tvCCFActivityReport" />
+
+            <TextView
+                android:id="@+id/tvSMEActivityValidate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="-"
+                android:textColor="@color/color_grey"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvCCFActivityValidate"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleSMEActivityValidate" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnValidation"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button_pink"
+                android:text="@string/validate"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCCFActivityValidate" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
